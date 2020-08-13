@@ -35,8 +35,8 @@ for call in calls:
 text_senders = set()
 text_receivers = set()
 for text in texts:
-   text_senders.append(text[0])
-   text_receivers.append(text[1])
+   text_senders.add(text[0])
+   text_receivers.add(text[1])
 
 
 telemarketers = sorted(callers - (text_receivers | text_senders | receivers))
