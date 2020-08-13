@@ -1,0 +1,23 @@
+------------------
+Task 0:
+find first record:  O(1)
+find last record:  O(1)
+
+
+------------------
+Task 1:
+O(n)
+
+------------------
+Task 2:
+O(n^2)
+
+------------------
+Task 3:
+Part A: O(n)
+Part B: O(n)
+
+
+------------------
+Task 4:
+O(n)
