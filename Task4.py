@@ -26,30 +26,23 @@ The list of numbers should be print out one per line in lexicographic order with
 """
 
 # creating list of unique call numbers &non-telemarketers
-callers = []
-non_telemarketers = []
+callers = set()
+receivers = set()
 for call in calls:
-    callers.append(call[0])
-    non_telemarketers.append(call[1])
-#print(len(call_numbers))
-callers = list(set(callers))
-print(len(callers))
+    callers.add(call[0])
+    receivers.add(call[1])
 
-# creating list of unique text numbers
+text_senders = set()
+text_receivers = set()
 for text in texts:
-   non_telemarketers.append(text[0])
-   non_telemarketers.append(text[1])
+   text_senders.append(text[0])
+   text_receivers.append(text[1])
 
-# Now Non-Telemarketers are those numbers who have recieved calls or sent a text  or recieved a text
 
-non_telemarketers = list(set(non_telemarketers))
+telemarketers = sorted(callers - (text_receivers | text_senders | receivers))
 # print(len(non_telemarketers))
 
-telemarketers=[]
-for caller in callers:
-    if caller not in non_telemarketers:
-        telemarketers.append(caller)
 
-print(f"Following callers could be possible telemarketers: \n {caller}")
-        
+print(f"Following callers could be possible telemarketers: ")
+print('\n'.join(telemarketers))
         
