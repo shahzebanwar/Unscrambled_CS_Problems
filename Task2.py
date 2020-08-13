@@ -34,8 +34,8 @@ unique_numbers = list(set(phone_numbers))
 durations = dict((el,0) for el in unique_numbers)
 
 for call in calls:
-    durations[call[0]] + = int(call[3])
-    durations[call[1]] + = int(call[3])
+    durations[call[0]] += int(call[3])
+    durations[call[1]] += int(call[3])
 #print(durations)
 longest_caller = max(durations, key=durations.get)
 

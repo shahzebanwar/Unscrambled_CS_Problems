@@ -7,7 +7,7 @@ find last record:  O(1)
 ------------------
 Task 1:
 O(n)
-
+Complexity in each case will remain O(1) irrespective of the input size
 ------------------
 Task 2:
 O(n^2)
