@@ -2,22 +2,26 @@
 Task 0:
 find first record:  O(1)
 find last record:  O(1)
-
+Complexity in each case will remain O(1) irrespective of the input size
 
 ------------------
 Task 1:
 O(n)
-Complexity in each case will remain O(1) irrespective of the input size
+Since there is one for loop involve the execution time will grow with the input file length
 ------------------
 Task 2:
-O(n^2)
+My previous approach was not good as it was O(n^2)
+Upon correction the Order reduced to O(n) i.e. from exponential to a linear approach
 
 ------------------
 Task 3:
 Part A: O(n)
 Part B: O(n)
-
+This was a simple linear approach with one for loop involved.
 
 ------------------
 Task 4:
 O(n)
+My previous approach was also a linear one but it involved multiple operation which could be computationaly expensive
+as per reviewer's suggestion I have used the set() approach that has simplified the code both for user and machine
+ 
