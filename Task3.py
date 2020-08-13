@@ -53,17 +53,16 @@ for call in calls:
         bangalore.append(call)
 
         if call[1][0] == "(":
-            fixed_dial.append(call[1][:call[1].index(")")+1])
+            fixed_dial.append(call[1][1:call[1].index(")")])
         
-        elif call[1][0] in ['7','8','9']:
-            # print(call[1][0])
-            mobile_dial.append(call[1])
-
-        if call[1][:3] == '140':
+        elif call[1][:3] == '140':
             tele_dial.append(call[1])
+
+        else:
+            mobile_dial.append(call[1][:4])
 
 print(f"The numbers called by people in Bangalore have codes:\n{sorted(set(fixed_dial))} \n \n")
 
-fixed_to_fixed = "{:.2f}".format(fixed_dial.count('(080)')*100/len(bangalore))
+fixed_to_fixed = "{:.2f}".format(fixed_dial.count('080')*100/len(bangalore))
 
 print(f"{fixed_to_fixed} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.")
