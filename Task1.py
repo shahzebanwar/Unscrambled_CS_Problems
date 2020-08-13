@@ -30,4 +30,4 @@ for call in calls:
     phone_numbers.append(call[1])
 
 #Using the combination of set and lenth funtion to display unique records
-print(len(set(phone_numbers)))
+print(f"There are {len(set(phone_numbers))} different telephone numbers in the records.")
