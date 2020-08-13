@@ -61,7 +61,7 @@ for call in calls:
         else:
             mobile_dial.append(call[1][:4])
 
-print(f"The numbers called by people in Bangalore have codes:\n{sorted(set(fixed_dial))} \n \n")
+print(f"The numbers called by people in Bangalore have codes:\n{sorted(set(fixed_dial + mobile_dial))} \n \n")
 
 fixed_to_fixed = "{:.2f}".format(fixed_dial.count('080')*100/len(bangalore))
 
