@@ -30,14 +30,13 @@ unique_numbers = list(set(phone_numbers))
 #print(unique_numbers)
 #print(calls[:5])
 
-# Calculate the longest call to or from the numbers
-durations = [0]*len(unique_numbers)
-for key in range(len(unique_numbers)):
-    for value in calls:
-        if value[0]== unique_numbers[key] or value[1] == unique_numbers[key]:
-            durations[key] += int(value[3])
-#print(durations)
-longest_caller = unique_numbers[durations.index(max(durations))]
-longest_call = max(durations)
+#initializing Dictionary
+durations = dict((el,0) for el in unique_numbers)
 
-print(f"{longest_caller} spent the longest time, {longest_call} seconds, on the phone during September 2016")
+for call in calls:
+    durations[call[0]] + = int(call[3])
+    durations[call[1]] + = int(call[3])
+#print(durations)
+longest_caller = max(durations, key=durations.get)
+
+print(f"{longest_caller} spent the longest time, {durations[longest_caller]} seconds, on the phone during September 2016")
